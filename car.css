@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: yellow;
+    margin: 0;
+}
+
+#road {
+    position: absolute;
+    top: 55%; /* Center the road vertically */
+    left: 0.1;
+    width: 89vw;
+    height: 35px; /* Height of the road */
+    background: black; /* Dark gray color for the road */
+    border-radius: 5px; /* Slight rounding for aesthetics */
+    overflow: hidden; /* Hide overflow for lanes */
+    display: none;
+}
+
+/* Lanes on the road */
+.lane {
+    position: absolute;
+    height: 100%; /* Full height of the road */
+    width: 10px; /* Width of each lane */
+    background: #fff; /* White for lanes */
+}
+
+.lane:nth-child(1) {
+    left: 25%; /* Position the first lane */
+}
+
+.lane:nth-child(2) {
+    left: 50%; /* Position the second lane */
+}
+
+.lane:nth-child(3) {
+    left: 75%; /* Position the third lane */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    width: 90%;
+    max-width: 100vw;
+}
+
+#display {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#lap-times {
+    margin-top: 20px;
+}
+
+#lap-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#timer-gif {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    #display {
+        font-size: 1.5rem; /* Decrease display font size */
+    }
+
+    button {
+        padding: 8px 12px; /* Adjust button padding */
+        font-size: 0.9rem; /* Decrease button font size */
+    }
+
+    #timer-gif {
+        max-width: 200px; /* Adjust gif size */
+    }
+}
+
+@media (max-width: 400px) {
+    #display {
+        font-size: 1.2rem; /* Further decrease display font size */
+    }
+
+    button {
+        padding: 6px 10px; /* Further adjust button padding */
+        font-size: 0.8rem; /* Further decrease button font size */
+    }
+
+    #timer-gif {
+        max-width: 150px; /* Further adjust gif size */
+    }
+
+    #road {
+        width: 80vw; /* Adjust road width */
+    }
+}

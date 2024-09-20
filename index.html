@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="./car.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: yellow;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #start, #stop, #reset, #lap, #pause, #resume {
+            background-color: black;
+            color: yellow;
+            border-radius: 10px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #start:hover, #stop:hover, #reset:hover, #lap:hover, #pause:hover, #resume:hover {
+            background-color: #444;
+        }
+
+        #display {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .lane {
+            height: 100px;
+            background-color: #555;
+            margin: 5px;
+        }
+
+        .imgs {
+            width: 90px;
+        }
+
+        .imgs1 {
+            width: 150px;
+        }
+
+        .divimg {
+            display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #display {
+                font-size: 1.5rem; /* Smaller font size on smaller screens */
+            }
+
+            #start, #stop, #reset, #lap, #pause, #resume {
+                font-size: 1rem; /* Smaller button font */
+                padding: 8px 16px; /* Smaller padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            #display {
+                font-size: 1.2rem; /* Even smaller font size */
+            }
+
+            #start, #stop, #reset, #lap, #pause, #resume {
+                font-size: 0.9rem; /* Further smaller button font */
+                padding: 6px 12px; /* Further smaller padding */
+            }
+
+            img {
+                width: 80%; /* Make images responsive */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="background-color: purple;">
+        <img id="timer-gif" width="100vw" src="./man.gif" alt="Timer GIF" style="display: none;"> <br><br>
+        <div id="road">
+            <div class="lane"></div>
+            <div class="lane"></div>
+            <div class="lane"></div>
+        </div>
+
+        <h1 style="color:green">Runway Game</h1>
+        <div id="display">00:00:00:00</div>
+        <div id="lap-times">
+            <h2 style="color: orangered;">Laps</h2>
+            <ul id="lap-list"></ul>
+        </div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+        <button id="lap">Lap</button>
+        <button id="pause">Pause</button>
+        <button id="resume">Resume</button> <br>
+        <img id="timer-gif-start" src="./start.gif" alt="Timer GIF" width="400px">
+    </div>
+    <script src="./carjs.js"></script>
+</body>
+</html>
